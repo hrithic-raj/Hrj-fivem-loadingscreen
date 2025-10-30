@@ -7,6 +7,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <title>Loading Screen</title>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Background container */
+        .image-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-fade {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+    </style>
 </head>
 <body class="sky noselect">
 
@@ -34,14 +63,6 @@
         <a href="https://discord.com/invite/MzegqdmH2X" target="_blank"><img src="img/Discord.png"></a>
     </div>
 
-    <!-- <div class="tiktok">
-        <a href="https://www.youtube.com/@digitalrangertv" target="_blank"><img src="img/Tiktok.png"></a>
-    </div>
-
-    <div class="website">
-        <a href="https://ko-fi.com/bebikdev" target="_blank"><img src="img/Site.png"></a>
-    </div> -->
-
     <div id="circleG">
         <div class="shaded-text">JOINING SERVER</div>
         <div id="circleG_1" class="circleG"></div>
@@ -67,16 +88,12 @@
         </div>
     </div>
 
-    <div class="video-background video-container noselect">
-        <!-- <video id="background-video" width="150%" height="150%" autoplay muted loop playsinline>
-            <source src="videos/video1.mp4" type="video/mp4">
-        </video> -->
-        <iframe id="background-video" width="150%" height="150%" src="" frameborder="0" allow="autoplay; muted" allowfullscreen></iframe>
-    </div>
+    <!-- 🔹 Background Crossfade Container -->
+    <div class="image-background"></div>
 
-    <audio id="loading" autoplay hidden loop></audio>
+    <!-- 🔹 Hidden audio player -->
+    <audio id="loading"></audio>
 
-    <script src="script/main.js"></script>
-
+    <script src="main.js"></script>
 </body>
 </html>
